@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Pairly</title>
+<meta name="description" content="Get help with Pairly. Find answers to common questions or contact our team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #1d1b2e;
+    --ink-soft:   #5d596f;
+    --paper:      #fbfaff;
+    --surface:    #f1eef9;
+    --line:       #e3def0;
+    --violet:     #5a4b9c;
+    --coral:      #e8845e;
+    --violet-dim: #efeaff;
+    --maxw:       46rem;
+
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body:    "Newsreader", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.075rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---------- Header ---------- */
+  header.masthead {
+    background:
+      radial-gradient(120% 140% at 100% 0%, var(--violet-dim) 0%, transparent 55%),
+      var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 3.5rem 0 3rem;
+  }
+
+  .brand { display: flex; align-items: center; gap: 0.7rem; }
+  .mark { width: 34px; height: 34px; flex: none; display: block; }
+  .mark circle { fill: none; stroke-width: 6; }
+  .mark .c1 { stroke: var(--violet); }
+  .mark .c2 { stroke: var(--coral); }
+
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .wordmark span { color: var(--coral); }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 6vw, 3.1rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin: 2rem 0 0.9rem;
+  }
+  .lede {
+    color: var(--ink-soft);
+    font-size: 1.15rem;
+    max-width: 38rem;
+    margin: 0;
+  }
+
+  /* ---------- Quick contact strip ---------- */
+  .contact-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+  }
+  .contact-tile {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 1.4rem 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .contact-tile:hover { background: var(--violet-dim); transform: translateY(-2px); }
+  .contact-tile .tile-label {
+    font-family: var(--display);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--violet);
+    margin: 0 0 0.4rem;
+  }
+  .contact-tile .tile-value {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    word-break: break-word;
+  }
+  .contact-tile .tile-sub {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0.35rem 0 0;
+  }
+
+  /* ---------- Sections ---------- */
+  main { padding: 1rem 0 3rem; }
+
+  section {
+    padding: 2.75rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .eyebrow {
+    font-family: var(--display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--coral);
+    margin: 0 0 0.6rem;
+  }
+  section h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin: 0 0 1.2rem;
+  }
+
+  p { margin: 0 0 1rem; }
+  section > p:last-child { margin-bottom: 0; }
+
+  /* ---------- Help steps ---------- */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 1.3rem 3rem;
+  }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 2rem; height: 2rem;
+    display: grid; place-items: center;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--violet);
+    background: var(--violet-dim);
+    border-radius: 50%;
+  }
+  .steps strong { font-weight: 600; }
+
+  /* ---------- FAQ ---------- */
+  .faq { border-top: 1px solid var(--line); }
+  details {
+    border-bottom: 1px solid var(--line);
+    padding: 0;
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    color: var(--ink);
+    padding: 1.15rem 2.2rem 1.15rem 0;
+    position: relative;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    position: absolute;
+    right: 0.2rem; top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--violet);
+    transition: transform 0.2s ease;
+  }
+  details[open] summary::after { content: "–"; }
+  details[open] summary { color: var(--violet); }
+  .faq-body { padding: 0 0 1.3rem; color: var(--ink-soft); }
+  .faq-body p:last-child { margin-bottom: 0; }
+
+  .ph {
+    background: var(--violet-dim);
+    color: var(--violet);
+    font-family: var(--display);
+    font-size: 0.88em;
+    font-weight: 600;
+    padding: 0.05em 0.4em;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  a.inline { color: var(--violet); text-decoration: underline; text-decoration-color: var(--line); }
+  a.inline:hover { text-decoration-color: var(--coral); }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; }
+  .footer-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  footer small { color: var(--ink-soft); font-family: var(--display); font-size: 0.85rem; }
+  .footer-links { display: flex; gap: 1.25rem; }
+  .footer-links a {
+    font-family: var(--display); font-size: 0.85rem; font-weight: 600;
+    color: var(--violet); text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--coral); }
+
+  a:focus-visible, summary:focus-visible {
+    outline: 2.5px solid var(--violet);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .reveal { opacity: 0; transform: translateY(12px); animation: rise 0.6s ease forwards; }
+  .reveal:nth-child(2) { animation-delay: 0.06s; }
+  .reveal:nth-child(3) { animation-delay: 0.12s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  @media (max-width: 540px) {
+    .contact-strip { grid-template-columns: 1fr; }
+    body { font-size: 1.02rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { animation: none; opacity: 1; transform: none; }
+    .contact-tile:hover { transform: none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand reveal">
+      <svg class="mark" viewBox="0 0 60 40" aria-hidden="true">
+        <circle class="c1" cx="22" cy="20" r="15"/>
+        <circle class="c2" cx="38" cy="20" r="15"/>
+      </svg>
+      <span class="wordmark">Pair<span>ly</span></span>
+    </div>
+
+    <h1 class="reveal">Support</h1>
+    <p class="lede reveal">Need a hand with Pairly? Find quick answers below, or reach out and we'll help you sort it out.</p>
+
+    <div class="contact-strip">
+      <a class="contact-tile" href="mailto:thomashaugaard11@gmail.com">
+        <p class="tile-label">Email us</p>
+        <div class="tile-value">thomashaugaard11@gmail.com</div>
+        <p class="tile-sub">The fastest way to reach us.</p>
+      </a>
+      <a class="contact-tile" href="#faq">
+        <p class="tile-label">Browse FAQ</p>
+        <div class="tile-value">Common questions</div>
+        <p class="tile-sub">Answers to what people ask most.</p>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <p class="eyebrow">Getting help</p>
+    <h2>How to reach us</h2>
+    <ol class="steps">
+      <li><strong>Check the FAQ.</strong> Many questions are answered in the section below — it's the quickest fix.</li>
+      <li><strong>Email our team.</strong> Send a note to <a class="inline" href="mailto:thomashaugaard11@gmail.com">thomashaugaard11@gmail.com</a> describing what happened.</li>
+      <li><strong>Include the details.</strong> Your device model, iOS version, and Pairly version (Settings → About) help us find the problem faster. A screenshot is gold.</li>
+    </ol>
+    <p style="margin-top:1.5rem; color:var(--ink-soft);">We aim to reply within <span class="ph">[response time, e.g. 1–2 business days]</span>.</p>
+  </section>
+
+  <section id="faq">
+    <p class="eyebrow">FAQ</p>
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+
+      <details>
+        <summary>How do I create an account?</summary>
+        <div class="faq-body">
+          <p>Open Pairly and tap <strong>Sign up</strong> on the welcome screen. Follow the prompts to set up your profile. <span class="ph">Edit to match your actual flow.</span></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>I forgot my password — what do I do?</summary>
+        <div class="faq-body">
+          <p>On the sign-in screen, tap <strong>Forgot password</strong> and enter your email. We'll send you a link to reset it. If it doesn't arrive, check your spam folder. <span class="ph">Edit to match your actual flow.</span></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I delete my account and data?</summary>
+        <div class="faq-body">
+          <p>Go to <strong>Settings → Account → Delete account</strong>, or email us and we'll handle it for you. Deleting your account permanently removes your associated data. <span class="ph">Edit to match your actual flow.</span></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The app is crashing or behaving strangely.</summary>
+        <div class="faq-body">
+          <p>First, make sure you're on the latest version from the App Store and try restarting the app. If the problem continues, email us with your device model and iOS version so we can investigate.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I report a bug or suggest a feature?</summary>
+        <div class="faq-body">
+          <p>We'd love to hear it. Email <a class="inline" href="mailto:thomashaugaard11@gmail.com">thomashaugaard11@gmail.com</a> with as much detail as you can — your feedback shapes what we build next.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where can I read your privacy policy?</summary>
+        <div class="faq-body">
+          <p>Our privacy policy is available <a class="inline" href="#">here</a>. <span class="ph">Replace # with your privacy policy URL.</span></p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">Still stuck?</p>
+    <h2>We're here to help</h2>
+    <p>If you didn't find what you were looking for, just send us a message. Real people read every email, and we'll do our best to get you back on track.</p>
+    <p style="margin-top:0.5rem;"><a class="inline" href="mailto:thomashaugaard11@gmail.com" style="font-family:var(--display); font-weight:600; font-size:1.15rem;">thomashaugaard11@gmail.com →</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <small>© <span id="year">2026</span> Pairly. All rights reserved.</small>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
